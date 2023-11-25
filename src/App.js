@@ -10,7 +10,11 @@ function App() {
       <Header />
       <main>
         <ProductsHeading />
-        <Product />
+        <div className="products">
+          {[...Array(10).keys()].map((v, index) => (
+            <Product key={index} />
+          ))}
+        </div>
       </main>
     </React.Fragment>
   );
