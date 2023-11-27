@@ -1,8 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState, useContext } from 'react';
 import './Product.css';
-import productDetails from './productDetails';
+import CartContext from './CartContext';
 
-function Product ({ product = productDetails[0] }) {
+function Product ({ product }) {
+    const { cart, editCart } = useContext(CartContext)
     const [currentColor, setCurrentColor] = useState(product.defaultColor)
     const [hovered, setHovered] = useState(false)
 
@@ -15,9 +16,35 @@ function Product ({ product = productDetails[0] }) {
         setHovered(!hovered)
     }
 
+    const selectedProduct = {
+        id: product.id,
+        name: product.name,
+        defaultPrice: product.defaultPrice,
+        salePrice: product.salePrice,
+        color: currentColor
+    }
+
+    function handleAddToCart () {
+        editCart({ product: selectedProduct, action: "add" })
+    }
+
+    function isInCart () {
+        const inCart = cart.filter(item => {
+            return item.id === product.id && item.color === currentColor
+        })
+
+        return !!inCart.length
+    }
+
+    const inCart = isInCart();
+
     return (
         <div className="product">
-            <div className="product-image-container" onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
+            <div
+                className="product-image-container"
+                onMouseEnter={toggleHover}
+                onMouseLeave={toggleHover}
+            >
                 <button className="product-image">
                     <img
                         src={"/images/" + product.id + "_" + currentColor + ".jpg"}
@@ -26,8 +53,14 @@ function Product ({ product = productDetails[0] }) {
                 </button>
                 {hovered && (
                     <div className="quick-add-container">
-                        <button className="quick-add" data-product={product.id} data-color={currentColor}>
-                            Quick Add +
+                        <button
+                            onClick={handleAddToCart}
+                            className="quick-add"
+                            data-product={product.id}
+                            data-color={currentColor}
+                            disabled={inCart}
+                        >
+                            {inCart ? "Added to Cart" : "Add to Cart"}
                         </button>
                     </div>
                 )}
@@ -37,7 +70,7 @@ function Product ({ product = productDetails[0] }) {
                 {product.salePrice ? (
                     <span><strike>${product.defaultPrice}</strike> ${product.salePrice}</span>
                 ) : (
-                    <span>{product.defaultPrice}</span>
+                    <span>${product.defaultPrice}</span>
                 )}
             </div>
             <div className="product-colors">

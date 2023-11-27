@@ -3,20 +3,22 @@ import './App.css';
 import Header from "./Header";
 import ProductsHeading from './ProductsHeading';
 import Product from './Product';
+import productDetails from './productDetails';
+import CartProvider from './CartProvider';
 
 function App() {
   return (
-    <React.Fragment>
+    <CartProvider>
       <Header />
       <main>
         <ProductsHeading />
         <div className="products">
-          {[...Array(10).keys()].map((v, index) => (
-            <Product key={index} />
+          {productDetails.map(item => (
+            <Product product={item} key={item.id} />
           ))}
         </div>
       </main>
-    </React.Fragment>
+    </CartProvider>
   );
 }
 

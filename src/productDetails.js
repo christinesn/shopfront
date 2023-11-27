@@ -3,7 +3,7 @@ const productDetails = [{
     name: "The Long-Sleeve Scoop-Neck",
     defaultPrice: 50,
     salePrice: 35,
-    defaultColor: "black",
+    defaultColor: "blush_pink",
     colors: [{
         id: "black",
         name: "Black",
