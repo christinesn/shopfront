@@ -16,27 +16,31 @@ function Product ({ product }) {
         setHovered(!hovered)
     }
 
+    const currentColorName = (() => {
+        const color = product.colors.filter(col => col.id === currentColor)
+        return color[0].name
+    })();
+
     const selectedProduct = {
         id: product.id,
         name: product.name,
         defaultPrice: product.defaultPrice,
         salePrice: product.salePrice,
-        color: currentColor
+        color: currentColor,
+        colorName: currentColorName
     }
 
     function handleAddToCart () {
         editCart({ product: selectedProduct, action: "add" })
     }
 
-    function isInCart () {
+    const inCart = (() => {
         const inCart = cart.filter(item => {
             return item.id === product.id && item.color === currentColor
         })
 
         return !!inCart.length
-    }
-
-    const inCart = isInCart();
+    })();
 
     return (
         <div className="product">
@@ -45,12 +49,10 @@ function Product ({ product }) {
                 onMouseEnter={toggleHover}
                 onMouseLeave={toggleHover}
             >
-                <button className="product-image">
-                    <img
-                        src={"/images/" + product.id + "_" + currentColor + ".jpg"}
-                        alt={product.name + ", " + product.colors.find(el => el.id === currentColor).name}
-                    />
-                </button>
+                <img
+                    src={"/images/" + product.id + "_" + currentColor + ".jpg"}
+                    alt={product.name + ", " + product.colors.find(el => el.id === currentColor).name}
+                />
                 {hovered && (
                     <div className="quick-add-container">
                         <button
