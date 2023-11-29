@@ -54,10 +54,10 @@ function Product ({ product }) {
                     alt={product.name + ", " + product.colors.find(el => el.id === currentColor).name}
                 />
                 {hovered && (
-                    <div className="quick-add-container">
+                    <div className="add-to-cart-container">
                         <button
                             onClick={handleAddToCart}
-                            className="quick-add"
+                            className="add-to-cart"
                             data-product={product.id}
                             data-color={currentColor}
                             disabled={inCart}
@@ -66,6 +66,17 @@ function Product ({ product }) {
                         </button>
                     </div>
                 )}
+                <div className="add-to-cart-container mobile">
+                    <button
+                        onClick={handleAddToCart}
+                        className="add-to-cart"
+                        data-product={product.id}
+                        data-color={currentColor}
+                        disabled={inCart}
+                    >
+                        {inCart ? "Added to Cart" : "Added to Cart"}
+                    </button>
+                </div>
             </div>
             <div className="product-name">{product.name}</div>
             <div className="product-price">

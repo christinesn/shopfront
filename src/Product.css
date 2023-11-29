@@ -1,16 +1,17 @@
 .product {
-    width: 300px;
+    width: 95%;
 }
 
 .product-image-container {
     display: flex;
     flex-flow: row nowrap;
     width: 100%;
+    position: relative
 }
 
 .product img {
-    width: 300px;
-    height: 380px;
+    width: 100%;
+    height: 500px;
     object-fit: cover;
     flex: none;
 }
@@ -19,21 +20,19 @@
     position: relative;
 }
 
-.quick-add-container {
+.add-to-cart-container {
     position: absolute;
-    height: 3em;
-    width: 300px;
-    margin-top: 300px;
-    margin-left: 6px;
+    height: 4em;
+    width: 100%;
+    margin-top: calc(500px - 5em);
 }
 
-.quick-add {
+.add-to-cart {
     display: block;
     height: 100%;
-    width: 75%;
+    width: 100%;
     margin: auto;
     background: white;
-    border: 1px solid rgba(0,0,0,0.2);
 }
 
 .product-color-select {

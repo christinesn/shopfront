@@ -1,0 +1,27 @@
+ul {
+    list-style-type: none;
+    margin: none;
+    padding: none;
+}
+
+ul li {
+    margin: 0;
+    padding: 0;
+}
+
+.navigation {
+    background: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 80%;
+    height: 100%;
+    padding: 1em;
+    box-shadow: -2px -2px 5px rgba(0,0,0,0.8);
+    margin-left: -80%;
+    transition: 0.25s ease;
+}
+
+.navigation.open {
+    margin-left: 0;
+}

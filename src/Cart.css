@@ -1,9 +1,16 @@
 .cart-modal {
-    border: 1px solid rgba(0,0,0,.2);
     background: white;
-    padding: 0.5em;
-    position: absolute;
-    right: 2.25em;
-    top: 3.5em;
-    width: 400px;
+    padding: 2em;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 80%;
+    transition: 0.25s ease;
+    margin-right: -80%;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.8);
+}
+
+.cart-modal.open {
+    margin-right: 0;
 }
