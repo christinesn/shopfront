@@ -3,7 +3,7 @@ import './App.css';
 import Header from "./Header";
 import ProductsHeading from './ProductsHeading';
 import Product from './Product';
-import productDetails from './productDetails';
+import products from './products';
 import CartProvider from './CartProvider';
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
       <main>
         <ProductsHeading />
         <div className="products">
-          {productDetails.map(item => (
+          {products.map(item => (
             <Product product={item} key={item.id} />
           ))}
         </div>

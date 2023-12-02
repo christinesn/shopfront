@@ -1,10 +1,12 @@
-import { useState, useContext } from 'react';
 import './Product.css';
+import { useState, useContext } from 'react';
 import CartContext from './CartContext';
 import ProductColors from './ProductColors';
+import ProductDetails from './ProductDetails';
+import AddToCartButton from './AddToCartButton';
 
 function Product ({ product }) {
-    const { cart, editCart } = useContext(CartContext)
+    const { cart } = useContext(CartContext)
     const [currentColor, setCurrentColor] = useState(product.defaultColor)
     const [hovered, setHovered] = useState(false)
 
@@ -30,10 +32,6 @@ function Product ({ product }) {
         colorName: currentColorName
     }
 
-    function handleAddToCart () {
-        editCart({ product: selectedProduct, action: "add" })
-    }
-
     function toggleHover () {
         setHovered(!hovered)
     }
@@ -49,33 +47,13 @@ function Product ({ product }) {
                     src={"/images/" + product.id + "_" + currentColor + ".jpg"}
                     alt={product.name + ", " + currentColorName}
                 />
-                {hovered && (
-                    <div className="add-to-cart-container">
-                        <button
-                            onClick={handleAddToCart}
-                            className="add-to-cart"
-                            data-product={product.id}
-                            data-color={currentColor}
-                            disabled={inCart}
-                        >
-                            {inCart ? "Added to Cart" : "Add to Cart"}
-                        </button>
-                    </div>
-                )}
+                <AddToCartButton
+                    hovered={hovered}
+                    selectedProducted={selectedProduct}
+                    inCart={inCart}
+                />
             </div>
-            <div className="product-details">
-                <div className="product-name">{product.name}</div>
-                <div className="product-price">
-                    {product.salePrice ? (
-                        <span>
-                            <strike>${product.defaultPrice}</strike>&nbsp;
-                            <span className="current-price">${product.salePrice}</span>
-                        </span>
-                    ) : (
-                        <span className="current-price">${product.defaultPrice}</span>
-                    )}
-                </div>
-            </div>
+            <ProductDetails product={product} />
             <ProductColors
                 colors={product.colors}
                 currentColor={currentColor}

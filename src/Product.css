@@ -19,35 +19,3 @@
 .product-image {
     position: relative;
 }
-
-.add-to-cart-container {
-    position: absolute;
-    height: 4em;
-    width: 100%;
-    margin-top: calc(500px - 5em);
-}
-
-.add-to-cart {
-    display: block;
-    height: 100%;
-    width: 100%;
-    margin: auto;
-    background: white;
-}
-
-.product-details {
-    display: flex;
-    width: 100%;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    margin-top: 1em;
-    margin-bottom: 1em;
-}
-
-strike {
-    color: var(--secondary-text);
-}
-
-.current-price {
-    font-weight: bold;
-}
