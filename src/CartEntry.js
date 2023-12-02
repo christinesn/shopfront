@@ -1,6 +1,7 @@
 import './CartEntry.css';
 import { useContext } from 'react';
 import CartContext from './CartContext';
+import RemoveSVG from './icons/RemoveSVG';
 
 function CartEntry ({ product }) {
     const { editCart } = useContext(CartContext)
@@ -17,25 +18,23 @@ function CartEntry ({ product }) {
                 alt={product.name + ", " + product.colorName}
             />
             <div className="details">
-                {product.name}
+                <span className="name">{product.name}</span>
                 <br/>
-                <span>{product.colorName}</span>
+                <span className="color">{product.colorName}</span>
                 <br/>
-                <span>
+                <div className="price-container">
                     {product.salePrice ? (
                         <span>
-                            <strike>${product.defaultPrice}</strike> ${product.salePrice}
+                            <strike>${product.defaultPrice}</strike> <span className="price">${product.salePrice}</span>
                         </span>
                     ) : (
-                        <span>${product.defaultPrice}</span>
+                        <span className="price">${product.defaultPrice}</span>
                     )}
-                </span>
+                </div>
             </div>
             <div className="remove">
-                <button onClick={removeFromCart}>
-                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512">
-                    <path d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"/>
-                </svg>
+                <button onClick={removeFromCart} title="Remove">
+                    <RemoveSVG />
                 </button>
             </div>
         </div>

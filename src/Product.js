@@ -49,7 +49,7 @@ function Product ({ product }) {
                 />
                 <AddToCartButton
                     hovered={hovered}
-                    selectedProducted={selectedProduct}
+                    selectedProduct={selectedProduct}
                     inCart={inCart}
                 />
             </div>

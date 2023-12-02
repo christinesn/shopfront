@@ -2,6 +2,10 @@ import './Cart.css';
 import { useState, useContext } from 'react';
 import CartContext from './CartContext';
 import CartEntry from './CartEntry';
+import CartTotal from './CartTotal';
+import EmptyCart from './EmptyCart';
+import CloseSVG from './icons/CloseSVG';
+import CartSVG from './icons/CartSVG';
 
 function Cart () {
     const { cart } = useContext(CartContext)
@@ -24,29 +28,28 @@ function Cart () {
     }
 
     return (
-        <div>
+        <div className="cart">
             {open && (<div onClick={toggleCart} className="cart-backdrop"></div>)}
             <button onClick={toggleCart}>
-                <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 576 512">
-                    <path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/>
-                </svg>
+                <CartSVG />
             </button>
             <div className={"cart-modal" + (open ? " open" : "")}>
+                <button
+                    className="close-cart"
+                    onClick={toggleCart}
+                    title="Close"
+                >
+                    <CloseSVG />
+                </button>
                 {cart.length === 0 ? (
-                    <div>
-                        <h3>Your cart is empty.</h3>
-                        <p>Add items to see them listed here.</p>
-                    </div>
+                    <EmptyCart />
                 ) : (
-                    <div>
+                    <div className="cart-body">
                         <h3>Your Cart</h3>
                         {cart.map(product => (
                             <CartEntry product={product} key={product.id + product.color} />
                         ))}
-                        <hr />
-                        <div className="cart-total">
-                            Total: ${cartTotal}
-                        </div>
+                        <CartTotal total={cartTotal} />
                     </div>
                 )}
             </div>

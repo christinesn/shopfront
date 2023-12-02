@@ -1,14 +1,21 @@
+.cart {
+    font-family: var(--main-font);
+}
+
 .cart-modal {
     background: white;
-    padding: 2em;
     position: fixed;
     top: 0;
     right: 0;
     height: 100%;
-    width: 80%;
+    width: 400px;
     transition: 0.25s ease;
-    margin-right: -80%;
+    margin-right: -420px;
     box-shadow: 2px 2px 5px rgba(0,0,0,0.8);
+}
+
+.cart-body {
+    padding: 2em;
 }
 
 .cart-modal.open {
@@ -21,9 +28,19 @@
     right: 0;
     height: 100%;
     width: 100%;
+    background-color: rgba(0,0,0,0.2);
+}
+
+.close-cart {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 100;
+    padding: 0.5em 0.75em;
 }
 
 h3 {
     margin: 0;
     padding: 0;
+    margin-bottom: 1em;
 }
