@@ -2,6 +2,14 @@
     margin-top: 1em;
 }
 
+.products-section {
+    color: var(--secondary-text);
+}
+
 h2 {
     margin: 0;
+}
+
+.products-category {
+    color: var(--secondary-text);
 }

@@ -1,24 +1,24 @@
 import { useState, useContext } from 'react';
 import './Product.css';
 import CartContext from './CartContext';
+import ProductColors from './ProductColors';
 
 function Product ({ product }) {
     const { cart, editCart } = useContext(CartContext)
     const [currentColor, setCurrentColor] = useState(product.defaultColor)
     const [hovered, setHovered] = useState(false)
 
-    function handleColorClick (e) {
-        e.preventDefault();
-        setCurrentColor(e.target.dataset.color)
-    }
-
-    function toggleHover () {
-        setHovered(!hovered)
-    }
-
-    const currentColorName = (() => {
-        const color = product.colors.filter(col => col.id === currentColor)
+    const [currentColorName, setCurrentColorName] = useState((() => {
+        const color = product.colors.filter(col => col.id === product.defaultColor)
         return color[0].name
+    })());
+
+    const inCart = (() => {
+        const inCart = cart.filter(item => {
+            return item.id === product.id && item.color === currentColor
+        })
+
+        return !!inCart.length
     })();
 
     const selectedProduct = {
@@ -34,13 +34,9 @@ function Product ({ product }) {
         editCart({ product: selectedProduct, action: "add" })
     }
 
-    const inCart = (() => {
-        const inCart = cart.filter(item => {
-            return item.id === product.id && item.color === currentColor
-        })
-
-        return !!inCart.length
-    })();
+    function toggleHover () {
+        setHovered(!hovered)
+    }
 
     return (
         <div className="product">
@@ -51,7 +47,7 @@ function Product ({ product }) {
             >
                 <img
                     src={"/images/" + product.id + "_" + currentColor + ".jpg"}
-                    alt={product.name + ", " + product.colors.find(el => el.id === currentColor).name}
+                    alt={product.name + ", " + currentColorName}
                 />
                 {hovered && (
                     <div className="add-to-cart-container">
@@ -66,39 +62,26 @@ function Product ({ product }) {
                         </button>
                     </div>
                 )}
-                <div className="add-to-cart-container mobile">
-                    <button
-                        onClick={handleAddToCart}
-                        className="add-to-cart"
-                        data-product={product.id}
-                        data-color={currentColor}
-                        disabled={inCart}
-                    >
-                        {inCart ? "Added to Cart" : "Added to Cart"}
-                    </button>
+            </div>
+            <div className="product-details">
+                <div className="product-name">{product.name}</div>
+                <div className="product-price">
+                    {product.salePrice ? (
+                        <span>
+                            <strike>${product.defaultPrice}</strike>&nbsp;
+                            <span className="current-price">${product.salePrice}</span>
+                        </span>
+                    ) : (
+                        <span className="current-price">${product.defaultPrice}</span>
+                    )}
                 </div>
             </div>
-            <div className="product-name">{product.name}</div>
-            <div className="product-price">
-                {product.salePrice ? (
-                    <span><strike>${product.defaultPrice}</strike> ${product.salePrice}</span>
-                ) : (
-                    <span>${product.defaultPrice}</span>
-                )}
-            </div>
-            <div className="product-colors">
-                {product.colors.map(color => (
-                    <button
-                        data-color={color.id}
-                        key={color.id}
-                        className="product-color-select"
-                        style={{
-                            backgroundColor: color.hex
-                        }}
-                        onClick={handleColorClick}
-                    />
-                ))}
-            </div>
+            <ProductColors
+                colors={product.colors}
+                currentColor={currentColor}
+                setCurrentColor={setCurrentColor}
+                setCurrentColorName={setCurrentColorName}
+            />
         </div>
     )
 }

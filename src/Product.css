@@ -35,18 +35,19 @@
     background: white;
 }
 
-.product-color-select {
-    height: 2.25em;
-    width: 2.25em;
-    border-radius: 100%;
-    border: 1px solid rgba(0,0,0,0.2);
-    margin-left: 0.5em;
+.product-details {
+    display: flex;
+    width: 100%;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 
-.product-color-select:first-of-type {
-    margin-left: 0;
+strike {
+    color: var(--secondary-text);
 }
 
-.product-color-select:hover {
-    box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+.current-price {
+    font-weight: bold;
 }

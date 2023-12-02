@@ -1,5 +1,10 @@
-:root {
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;700&family=Source+Sans+3:wght@400;700&display=swap');
 
+:root {
+    --main-text: #161616;
+    --secondary-text: #2b2b2b;
+    --main-font: 'Source Sans 3', 'Segoe UI', 'sans-serif';
+    --accent-font: 'Crimson Text', serif;
 }
 
 * {
@@ -7,7 +12,8 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14pt;
+    font-family: 'Source Sans 3', sans-serif;
     margin: 0;
 }
 

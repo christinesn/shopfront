@@ -14,3 +14,16 @@
 .cart-modal.open {
     margin-right: 0;
 }
+
+.cart-backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+}
+
+h3 {
+    margin: 0;
+    padding: 0;
+}
