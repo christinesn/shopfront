@@ -1,5 +1,16 @@
 import './Navigation.css';
 import {useState} from 'react';
+import MenuSVG from './icons/MenuSVG';
+import CloseSVG from './icons/CloseSVG';
+import CaretSVG from './icons/CaretSVG';
+
+const menuItems = [
+    "New Arrivals",
+    "Best-Sellers",
+    "Tops",
+    "Sweaters",
+    "Denim"
+]
 
 function Navigation () {
     const [open, setOpen] = useState(false)
@@ -12,20 +23,37 @@ function Navigation () {
     return (
         <div>
             {open && (<div className="nav-backdrop" onClick={toggleOpen}></div>)}
-            <button onClick={toggleOpen}>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                    <path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/>
-                </svg>
+            <button onClick={toggleOpen} title="Open Menu">
+                <MenuSVG />
             </button>
-            <nav className={"navigation" + (open ? " open" : "")}>
-                <ul>
-                    <li><button>Home</button></li>
-                    <li><button>Sale</button></li>
-                    <li><button>New Arrivals</button></li>
-                    <li><button>Women's</button></li>
-                    <li><button>Men's</button></li>
-                </ul>
-            </nav>
+            <div className={"navigation" + (open ? " open" : "")}>
+                <button className="close-nav" onClick={toggleOpen} title="Close">
+                    <CloseSVG />
+                </button>
+                <nav className="nav-body">
+                    <ul>
+                        {menuItems.map(item => (
+                            <li key={item}>
+                                <button>
+                                    <div>{item}</div>
+                                    <div><CaretSVG /></div>
+                                </button>
+                            </li>
+                        ))}
+                        <li>
+                            <button>
+                                <div className="sale">Sale</div>
+                                <div><CaretSVG /></div>
+                            </button>
+                        </li>
+                    </ul>
+                </nav>
+                <div className="account-section">
+                    <hr />
+                    <button>Log in</button>
+                    <button>Sign up</button>
+                </div>
+            </div>
         </div>
     )
 }

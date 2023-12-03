@@ -30,7 +30,7 @@ function Cart () {
     return (
         <div className="cart">
             {open && (<div onClick={toggleCart} className="cart-backdrop"></div>)}
-            <button onClick={toggleCart}>
+            <button onClick={toggleCart} title="Open Cart">
                 <CartSVG />
             </button>
             <div className={"cart-modal" + (open ? " open" : "")}>

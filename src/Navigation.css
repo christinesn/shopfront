@@ -1,7 +1,7 @@
 ul {
     list-style-type: none;
-    margin: none;
-    padding: none;
+    margin: 0;
+    padding: 0;
 }
 
 ul li {
@@ -14,16 +14,45 @@ ul li {
     position: fixed;
     top: 0;
     left: 0;
-    width: 80%;
+    width: 350px;
     height: 100%;
-    padding: 1em;
     box-shadow: -2px -2px 5px rgba(0,0,0,0.8);
-    margin-left: -80%;
+    margin-left: -370px;
     transition: 0.25s ease;
+}
+
+.nav-body {
+    margin-top: 80px;
+}
+
+.nav-body button {
+    width: 100%;
+    padding: 0.1em 1em;
+    text-align: left;
+    font-size: 1.2em;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.nav-body button:hover {
+    background-color: rgb(245, 245, 245);
+}
+
+.sale {
+    color: rgb(241, 78, 78);
 }
 
 .navigation.open {
     margin-left: 0;
+}
+
+.close-nav {
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    padding: 0.5em 1em;
 }
 
 .nav-backdrop {
@@ -32,4 +61,26 @@ ul li {
     right: 0;
     height: 100%;
     width: 100%;
+    background: rgba(0,0,0,0.2);
+}
+
+.account-section {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin-bottom: 50px;
+    padding: 1em;
+}
+
+.account-section hr {
+    border-top: 0;
+}
+
+.account-section button {
+    display: block;
+}
+
+.account-section button:first-of-type {
+    margin-top: 1em;
 }
