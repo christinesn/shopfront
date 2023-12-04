@@ -23,7 +23,11 @@ function Navigation () {
     return (
         <div>
             <div className={"nav-backdrop" + (open ? " open" : "")} onClick={toggleOpen}></div>
-            <button className="open-nav" onClick={toggleOpen} title="Open Menu">
+            <button
+                className="open-nav"
+                onClick={toggleOpen}
+                title={open ? "Close menu " : "Open menu"}
+            >
                 {open ? <CloseSVG /> : <MenuSVG />}
             </button>
             <div className={"navigation" + (open ? " open" : "")}>
