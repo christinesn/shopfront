@@ -7,11 +7,11 @@
     display: flex;
     align-content: center;
     justify-content: center;
-    height: 1.75em;
-    width: 1.75em;
+    height: 25px;
+    width: 25px;
     border-radius: 100%;
     margin-left: 0.5em;
-    padding: 2px;
+    padding: 1px;
 }
 
 .color-select:first-of-type {
@@ -19,7 +19,7 @@
 }
 
 .color-select.selected {
-    background: rgba(0,0,0,0.4);
+    background: rgba(0,0,0,0.8);
 }
 
 .color-select:hover:not(:disabled) {

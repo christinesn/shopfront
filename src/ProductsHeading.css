@@ -4,12 +4,16 @@
 
 .products-section {
     color: var(--secondary-text);
+    font-size: 0.8em;
 }
 
 h2 {
     margin: 0;
+    font-size: 1.25em;
+    font-weight: normal;
 }
 
 .products-category {
     color: var(--secondary-text);
+    font-size: 0.8em;
 }

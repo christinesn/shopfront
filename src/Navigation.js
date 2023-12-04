@@ -22,14 +22,11 @@ function Navigation () {
 
     return (
         <div>
-            {open && (<div className="nav-backdrop" onClick={toggleOpen}></div>)}
+            <div className={"nav-backdrop" + (open ? " open" : "")} onClick={toggleOpen}></div>
             <button className="open-nav" onClick={toggleOpen} title="Open Menu">
-                <MenuSVG />
+                {open ? <CloseSVG /> : <MenuSVG />}
             </button>
             <div className={"navigation" + (open ? " open" : "")}>
-                <button className="close-nav" onClick={toggleOpen} title="Close">
-                    <CloseSVG />
-                </button>
                 <nav className="nav-body">
                     <ul>
                         {menuItems.map(item => (
