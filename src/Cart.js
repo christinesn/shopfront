@@ -27,11 +27,16 @@ function Cart () {
         setOpen(!open)
     }
 
+    const count = cart.length;
+
     return (
         <div className="cart">
             {open && (<div onClick={toggleCart} className="cart-backdrop"></div>)}
             <button className="open-cart" onClick={toggleCart} title="Open Cart">
                 <CartSVG />
+                <div className={"cart-badge" + (count === 0 ? " empty" : "")}>
+                    <div className="cart-badge-count">{count}</div>
+                </div>
             </button>
             <div className={"cart-modal" + (open ? " open" : "")}>
                 <button

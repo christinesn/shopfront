@@ -2,6 +2,10 @@
     font-family: var(--main-font);
 }
 
+.open-cart {
+    position: relative;
+}
+
 .open-cart:hover svg,
 .open-cart:focus svg,
 .open-cart:active svg {
@@ -18,6 +22,34 @@
     transition: 0.25s ease;
     margin-right: -420px;
     box-shadow: 2px 2px 5px rgba(0,0,0,0.8);
+}
+
+.cart-badge.empty {
+    display: none;
+}
+
+.cart-badge {
+    box-sizing: content-box;
+    position: absolute;
+    display: flex;
+    background: var(--main-text);
+    border-radius: 100%;
+    border: 2px solid white;
+    height: 18px;
+    width: 18px;
+    top: 0;
+    right: 0;
+    margin-top: -0.5em;
+    margin-right: -0.2em;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart-badge-count {
+    color: white;
+    flex: 1 0 auto;
+    font-size: 0.6em;
+    font-weight: bold;
 }
 
 .cart-body {
