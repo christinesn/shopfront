@@ -8,7 +8,6 @@ import AddToCartButton from './AddToCartButton';
 function Product ({ product }) {
     const { cart } = useContext(CartContext)
     const [currentColor, setCurrentColor] = useState(product.defaultColor)
-    const [hovered, setHovered] = useState(false)
 
     const [currentColorName, setCurrentColorName] = useState((() => {
         const color = product.colors.filter(col => col.id === product.defaultColor)
@@ -32,23 +31,14 @@ function Product ({ product }) {
         colorName: currentColorName
     }
 
-    function toggleHover () {
-        setHovered(!hovered)
-    }
-
     return (
         <div className="product">
-            <div
-                className="product-image-container"
-                onMouseEnter={toggleHover}
-                onMouseLeave={toggleHover}
-            >
+            <div className="product-image-container">
                 <img
                     src={"/images/" + product.id + "_" + currentColor + ".jpg"}
                     alt={product.name + ", " + currentColorName}
                 />
                 <AddToCartButton
-                    hovered={hovered}
                     selectedProduct={selectedProduct}
                     inCart={inCart}
                 />

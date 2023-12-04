@@ -5,6 +5,7 @@ import ProductsHeading from './ProductsHeading';
 import Product from './Product';
 import products from './products';
 import CartProvider from './CartProvider';
+import Footer from './Footer';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           ))}
         </div>
       </main>
+      <Footer />
     </CartProvider>
   );
 }

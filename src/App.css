@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;700&family=Source+Sans+3:wght@400;700&display=swap');
 
 :root {
-    /* --main-text: #161616; */
     --main-text: #262626;
     --secondary-text: #5c5c5c;
     --main-font: 'Source Sans 3', 'Segoe UI', 'sans-serif';
@@ -32,6 +31,10 @@ button {
     color: var(--main-text);
 }
 
+button:disabled {
+    cursor: auto;
+}
+
 svg {
     height: 1.25em;
 }
@@ -44,4 +47,5 @@ svg {
     justify-content: center;
     width: 100%;
     margin-top: 1.5em;
+    margin-bottom: 50px;
 }

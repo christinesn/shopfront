@@ -30,7 +30,7 @@ function Cart () {
     return (
         <div className="cart">
             {open && (<div onClick={toggleCart} className="cart-backdrop"></div>)}
-            <button onClick={toggleCart} title="Open Cart">
+            <button className="open-cart" onClick={toggleCart} title="Open Cart">
                 <CartSVG />
             </button>
             <div className={"cart-modal" + (open ? " open" : "")}>
@@ -46,10 +46,12 @@ function Cart () {
                 ) : (
                     <div className="cart-body">
                         <h3>Your Cart</h3>
-                        {cart.map(product => (
-                            <CartEntry product={product} key={product.id + product.color} />
-                        ))}
-                        <CartTotal total={cartTotal} />
+                        <div className="cart-items">
+                            {cart.map(product => (
+                                <CartEntry product={product} key={product.id + product.color} />
+                            ))}
+                        </div>
+                        <CartTotal total={cartTotal} count={cart.length} />
                     </div>
                 )}
             </div>

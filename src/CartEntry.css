@@ -27,6 +27,12 @@
     height: 0.8em;
 }
 
+.remove button:hover svg,
+.remove button:focus svg,
+.remove button:active svg {
+    fill: rgba(0,0,0,0.6);
+}
+
 .cart-product .name {
     font-size: 0.8em;
 }

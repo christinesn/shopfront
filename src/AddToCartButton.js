@@ -1,8 +1,8 @@
-import {Fragment, useContext} from 'react';
+import {useContext} from 'react';
 import './AddToCartButton.css';
 import CartContext from './CartContext';
 
-function AddToCartButton ({ hovered, selectedProduct, inCart }) {
+function AddToCartButton ({ selectedProduct, inCart }) {
     const { editCart } = useContext(CartContext)
 
     function handleAddToCart () {
@@ -10,19 +10,13 @@ function AddToCartButton ({ hovered, selectedProduct, inCart }) {
     }
 
     return (
-        <Fragment>
-            {hovered && (
-                <div className="add-to-cart-container">
-                    <button
-                        onClick={handleAddToCart}
-                        className="add-to-cart"
-                        disabled={inCart}
-                    >
-                        {inCart ? "Added to Cart" : "Add to Cart"}
-                    </button>
-                </div>
-            )}
-        </Fragment>
+        <button
+            onClick={handleAddToCart}
+            className="add-to-cart"
+            disabled={inCart}
+        >
+            {inCart ? "In cart" : "Add to Cart"}
+        </button>
     )
 }
 

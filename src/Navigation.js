@@ -23,7 +23,7 @@ function Navigation () {
     return (
         <div>
             {open && (<div className="nav-backdrop" onClick={toggleOpen}></div>)}
-            <button onClick={toggleOpen} title="Open Menu">
+            <button className="open-nav" onClick={toggleOpen} title="Open Menu">
                 <MenuSVG />
             </button>
             <div className={"navigation" + (open ? " open" : "")}>

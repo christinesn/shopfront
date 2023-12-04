@@ -12,4 +12,5 @@ header {
     align-items: center;
     padding: 2em;
     font-family: var(--accent-font);
+    background: #fffdf9;
 }

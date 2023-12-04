@@ -14,11 +14,17 @@ ul li {
     position: fixed;
     top: 0;
     left: 0;
-    width: 350px;
+    width: 250px;
     height: 100%;
     box-shadow: -2px -2px 5px rgba(0,0,0,0.8);
-    margin-left: -370px;
+    margin-left: -270px;
     transition: 0.25s ease;
+}
+
+.open-nav:hover svg,
+.open-nav:focus svg,
+.open-nav:active svg {
+    fill: rgba(0,0,0,0.6);
 }
 
 .nav-body {
@@ -55,6 +61,12 @@ ul li {
     padding: 0.5em 1em;
 }
 
+.close-nav:hover svg,
+.close-nav:focus svg,
+.close-nav:active svg {
+    fill: rgba(0,0,0,0.6);
+}
+
 .nav-backdrop {
     position: fixed;
     top: 0;
@@ -79,6 +91,12 @@ ul li {
 
 .account-section button {
     display: block;
+}
+
+.account-section button:hover,
+.account-section button:active,
+.account-section button:focus {
+    background: rgba(0,0,0,0.06);
 }
 
 .account-section button:first-of-type {

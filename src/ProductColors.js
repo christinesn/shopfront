@@ -13,7 +13,9 @@ function ProductColors ({ colors, currentColor, setCurrentColor, setCurrentColor
                 <button
                     key={color.id}
                     className={"color-select" + (color.id === currentColor ? " selected" : "")}
+                    disabled={color.id === currentColor}
                     onClick={(e) => handleColorChange(e, color)}
+                    title={color.name}
                 >
                     <div className="color-border">
                         <div className="color-fill"

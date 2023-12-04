@@ -14,12 +14,16 @@
     padding: 2px;
 }
 
+.color-select:first-of-type {
+    margin-left: 0;
+}
+
 .color-select.selected {
     background: rgba(0,0,0,0.4);
 }
 
-.color-select:hover {
-    box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+.color-select:hover:not(:disabled) {
+    background: rgba(0,0,0,0.2);
 }
 
 .color-border {

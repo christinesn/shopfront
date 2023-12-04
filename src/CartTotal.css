@@ -27,3 +27,8 @@
     margin: auto;
     margin-top: 1em;
 }
+
+.cart-count {
+    font-weight: normal;
+    color: var(--secondary-text)
+}
