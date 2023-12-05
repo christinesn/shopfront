@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;700&family=Source+Sans+3:wght@400;700&display=swap');
 
+/*
+Breakpoints:
+sm: 640px
+md: 768px
+lg: 1024px
+xl: 1280px
+2xl: 1536px
+*/
+
 :root {
     --main-text: #262626;
     --secondary-text: #5c5c5c;
@@ -46,6 +55,19 @@ svg {
     row-gap: 3em;
     justify-content: center;
     width: 100%;
+    margin: auto;
     margin-top: 1.5em;
     margin-bottom: 50px;
+}
+
+@media screen and (min-width: 1280px) {
+    .products {
+        width: 90%;
+    }
+}
+
+@media screen and (min-width: 1536px) {
+    .products {
+        width: 75%;
+    }
 }

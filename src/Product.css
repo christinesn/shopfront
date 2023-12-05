@@ -30,3 +30,25 @@
         height: 200px;
     }
 }
+
+@media screen and (min-width: 768px) {
+    .product img {
+        height: 220px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .product img {
+        height: 300px;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .product {
+        width: 20%;
+    }
+
+    .product img {
+        height: 260px;
+    }
+}

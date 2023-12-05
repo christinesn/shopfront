@@ -19,6 +19,7 @@
     right: 0;
     height: 100%;
     width: 400px;
+    max-width: 100%;
     transition: 0.25s ease;
     margin-right: -420px;
     box-shadow: 2px 2px 5px rgba(0,0,0,0.8);
