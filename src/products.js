@@ -1,4 +1,4 @@
-const productDetails = [{
+const products = [{
     id: "long_sleeve_scoop_neck",
     name: "The Long-Sleeve Scoop-Neck",
     defaultPrice: 50,
@@ -200,4 +200,4 @@ const productDetails = [{
     }]
 }]
 
-export default productDetails
+export default products
