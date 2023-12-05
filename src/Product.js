@@ -37,6 +37,7 @@ function Product ({ product }) {
                 <img
                     src={"/images/" + product.id + "_" + currentColor + ".jpg"}
                     alt={product.name + ", " + currentColorName}
+                    title={product.name + ", " + currentColorName}
                 />
                 <AddToCartButton
                     selectedProduct={selectedProduct}
