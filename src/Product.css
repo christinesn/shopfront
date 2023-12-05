@@ -1,5 +1,6 @@
 .product {
     width: 45%;
+    transition: 0.3s ease;
 }
 
 .product-image-container {
@@ -15,6 +16,7 @@
     object-fit: cover;
     object-position: top;
     flex: none;
+    transition: 0.3s ease;
 }
 
 .product-image {
@@ -49,6 +51,6 @@
     }
 
     .product img {
-        height: 260px;
+        height: 280px;
     }
 }

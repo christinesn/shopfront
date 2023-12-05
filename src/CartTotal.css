@@ -28,6 +28,10 @@
     margin-top: 1em;
 }
 
+.checkout:hover, .checkout:active, .checkout:focus {
+    background: rgba(0,0,0,0.6);
+}
+
 .cart-count {
     font-weight: normal;
     color: var(--secondary-text)

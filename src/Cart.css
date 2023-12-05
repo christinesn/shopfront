@@ -2,16 +2,6 @@
     font-family: var(--main-font);
 }
 
-.open-cart {
-    position: relative;
-}
-
-.open-cart:hover svg,
-.open-cart:focus svg,
-.open-cart:active svg {
-    fill: rgba(0,0,0,0.6);
-}
-
 .cart-modal {
     background: white;
     position: fixed;
@@ -51,6 +41,20 @@
     flex: 1 0 auto;
     font-size: 0.6em;
     font-weight: bold;
+}
+
+.open-cart:hover .cart-badge {
+    background-color: #666666;
+}
+
+.open-cart {
+    position: relative;
+}
+
+.open-cart:hover svg,
+.open-cart:focus svg,
+.open-cart:active svg {
+    fill: #666666;
 }
 
 .cart-body {
