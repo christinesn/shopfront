@@ -2,7 +2,7 @@ import './Product.css';
 import { useState, useContext } from 'react';
 import CartContext from './CartContext';
 import ProductColors from './ProductColors';
-import ProductDetails from './ProductDetails.js';
+import ProductDetails from './ProductDetails';
 import AddToCartButton from './AddToCartButton';
 
 function Product ({ product }) {
