@@ -2,7 +2,7 @@ import './Product.css';
 import { useState, useContext } from 'react';
 import CartContext from './CartContext';
 import ProductColors from './ProductColors';
-import ProductDetails from './ProductDetails';
+import ProductDetail from './ProductDetail';
 import AddToCartButton from './AddToCartButton';
 
 function Product ({ product }) {
@@ -44,7 +44,7 @@ function Product ({ product }) {
                     inCart={inCart}
                 />
             </div>
-            <ProductDetails product={product} />
+            <ProductDetail product={product} />
             <ProductColors
                 colors={product.colors}
                 currentColor={currentColor}

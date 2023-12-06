@@ -1,6 +1,6 @@
-import './ProductDetails.css';
+import './ProductDetail.css';
 
-function ProductDetails ({ product }) {
+function ProductDetail ({ product }) {
     return (
         <div className="product-details">
             <div className="product-name">{product.name}</div>
@@ -18,4 +18,4 @@ function ProductDetails ({ product }) {
     )
 }
 
-export default ProductDetails
+export default ProductDetail
