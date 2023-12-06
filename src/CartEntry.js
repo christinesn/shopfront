@@ -14,7 +14,7 @@ function CartEntry ({ product }) {
     return (
         <div className="cart-product">
             <img
-                src={"/images/tiny/" + product.id + "_" + product.color + ".jpg"}
+                src={"./images/tiny/" + product.id + "_" + product.color + ".jpg"}
                 alt={product.name + ", " + product.colorName}
             />
             <div className="details">

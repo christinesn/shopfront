@@ -35,7 +35,7 @@ function Product ({ product }) {
         <div className="product">
             <div className="product-image-container">
                 <img
-                    src={"/images/" + product.id + "_" + currentColor + ".jpg"}
+                    src={"./images/" + product.id + "_" + currentColor + ".jpg"}
                     alt={product.name + ", " + currentColorName}
                     title={product.name + ", " + currentColorName}
                 />
