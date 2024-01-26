@@ -12,12 +12,12 @@ function App() {
     <CartProvider>
       <Header />
       <main>
-        <ProductsHeading />
-        <div className="products">
+        <section className="products">
+          <ProductsHeading />
           {products.map(item => (
             <Product product={item} key={item.id} />
           ))}
-        </div>
+        </section>
       </main>
       <Footer />
     </CartProvider>

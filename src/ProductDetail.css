@@ -1,4 +1,4 @@
-.product-details {
+.details {
     display: flex;
     width: 100%;
     flex-flow: row wrap;
@@ -11,6 +11,15 @@ strike {
     color: var(--secondary-text);
 }
 
-.current-price {
+.price {
     font-weight: bold;
+}
+
+h3 {
+    margin: 0;
+    font-size: 1rem;
+    padding: 0;
+    font-weight: normal;
+    display: block;
+    width: 60%;
 }

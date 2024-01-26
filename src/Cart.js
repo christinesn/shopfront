@@ -38,7 +38,7 @@ function Cart () {
                     <div className="cart-badge-count">{count}</div>
                 </div>
             </button>
-            <div className={"cart-modal" + (open ? " open" : "")}>
+            <aside className={"cart-modal" + (open ? " open" : "")}>
                 <button
                     className="close-cart"
                     onClick={toggleCart}
@@ -49,17 +49,17 @@ function Cart () {
                 {cart.length === 0 ? (
                     <EmptyCart />
                 ) : (
-                    <div className="cart-body">
-                        <h3>Your Cart</h3>
+                    <section className="cart-body">
+                        <h4>Your Cart</h4>
                         <div className="cart-items">
                             {cart.map(product => (
                                 <CartEntry product={product} key={product.id + product.color} />
                             ))}
                         </div>
                         <CartTotal total={cartTotal} count={cart.length} />
-                    </div>
+                    </section>
                 )}
-            </div>
+            </aside>
         </div>
     )
 }

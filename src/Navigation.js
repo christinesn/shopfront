@@ -1,5 +1,5 @@
 import './Navigation.css';
-import {useState} from 'react';
+import { useState } from 'react';
 import MenuSVG from './icons/MenuSVG';
 import CloseSVG from './icons/CloseSVG';
 import CaretSVG from './icons/CaretSVG';
@@ -26,12 +26,12 @@ function Navigation () {
             <button
                 className="open-nav"
                 onClick={toggleOpen}
-                title={open ? "Close menu " : "Open menu"}
+                title={open ? "Close menu" : "Open menu"}
             >
                 {open ? <CloseSVG /> : <MenuSVG />}
             </button>
-            <div className={"navigation" + (open ? " open" : "")}>
-                <nav className="nav-body">
+            <aside className={"navigation" + (open ? " open" : "")}>
+                <nav>
                     <ul>
                         {menuItems.map(item => (
                             <li key={item}>
@@ -54,7 +54,7 @@ function Navigation () {
                     <button>Log in</button>
                     <button>Sign up</button>
                 </div>
-            </div>
+            </aside>
         </div>
     )
 }

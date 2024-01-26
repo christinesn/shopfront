@@ -12,32 +12,30 @@ function CartEntry ({ product }) {
     }
 
     return (
-        <div className="cart-product">
+        <article className="cart-entry">
             <img
                 src={"./images/tiny/" + product.id + "_" + product.color + ".jpg"}
                 alt={product.name + ", " + product.colorName}
             />
             <div className="details">
-                <span className="name">{product.name}</span>
-                <br/>
-                <span className="color">{product.colorName}</span>
-                <br/>
-                <div className="price-container">
-                    {product.salePrice ? (
-                        <span>
-                            <strike>${product.defaultPrice}</strike> <span className="price">${product.salePrice}</span>
-                        </span>
-                    ) : (
-                        <span className="price">${product.defaultPrice}</span>
-                    )}
+                <div className="name">
+                    <h5>{product.name}</h5>
+                    <span className="color">{product.colorName}</span>
                 </div>
+                {product.salePrice ? (
+                    <div>
+                        <strike>${product.defaultPrice}</strike> <span className="price">${product.salePrice}</span>
+                    </div>
+                ) : (
+                    <span className="price">${product.defaultPrice}</span>
+                )}
             </div>
             <div className="remove">
                 <button onClick={removeFromCart} title="Remove">
                     <RemoveSVG />
                 </button>
             </div>
-        </div>
+        </article>
     )
 }
 

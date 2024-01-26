@@ -5,15 +5,18 @@ function CartTotal ({ total, count }) {
     if (count === 1) itemText = 'item'
 
     return (
-        <div className="total">
+        <section className="total">
             <div className="subtotal">
-                <div>Subtotal <span className="cart-count">({count} {itemText})</span></div>
-                <div>${total}</div>
+                <div>
+                    <h6>Subtotal</h6>
+                    <span className="cart-count">({count} {itemText})</span>
+                </div>
+                <span>${total}</span>
             </div>
             <button className="checkout">
                 Checkout
             </button>
-        </div>
+        </section>
     )
 }
 

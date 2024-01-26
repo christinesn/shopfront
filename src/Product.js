@@ -32,7 +32,7 @@ function Product ({ product }) {
     }
 
     return (
-        <div className="product">
+        <article className="product">
             <div className="product-image-container">
                 <img
                     src={"./images/" + product.id + "_" + currentColor + ".jpg"}
@@ -51,7 +51,7 @@ function Product ({ product }) {
                 setCurrentColor={setCurrentColor}
                 setCurrentColorName={setCurrentColorName}
             />
-        </div>
+        </article>
     )
 }
 

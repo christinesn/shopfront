@@ -17,6 +17,12 @@
     font-weight: bold;
 }
 
+h6 {
+    font-size: 1em;
+    margin: 0;
+    display: inline-block;
+}
+
 .checkout {
     color: white;
     background: var(--main-text);
@@ -34,5 +40,6 @@
 
 .cart-count {
     font-weight: normal;
-    color: var(--secondary-text)
+    color: var(--secondary-text);
+    margin-left: 0.25em;
 }

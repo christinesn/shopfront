@@ -41,11 +41,11 @@ ul li {
     fill: rgba(0,0,0,0.6);
 }
 
-.nav-body {
+nav {
     margin-top: 1em;
 }
 
-.nav-body button {
+nav button {
     width: 100%;
     padding: 0.1em 1em;
     text-align: left;
@@ -55,7 +55,7 @@ ul li {
     align-content: center;
 }
 
-.nav-body button:hover {
+nav button:hover {
     background-color: rgb(245, 245, 245);
 }
 
